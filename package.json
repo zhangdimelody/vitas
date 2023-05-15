@@ -1,10 +1,14 @@
 {
   "name": "vitas",
   "version": "0.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "private": true,
   "scripts": {
+    "build": "yarn workspaces run build",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "initbuild": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -19,6 +23,7 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "lerna": "^6.6.1",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
