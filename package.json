@@ -46,5 +46,15 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "组件库",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.100tal.com:peiyou_us_fe/vitas.git"
+  },
+  "author": "zhangdi56",
+  "license": "ISC"
 }
