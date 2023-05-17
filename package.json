@@ -2,14 +2,12 @@
   "name": "@thinkacademy/vitas",
   "version": "0.1.0",
   "workspaces": [
-    "packages/*" 
+    "packages/*"
   ],
   "private": true,
   "scripts": {
-    "build": "yarn workspaces run build",
-    "serve": "vue-cli-service serve",
-    "initbuild": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "publish:independent": "node scripts/publish.js",
+    "publish": "lerna publish"
   },
   "publishConfig": {
     "registry": "https://npm.xesv5.com/"
@@ -26,6 +24,7 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "execa": "^5.1.1",
     "lerna": "^6.6.1",
     "vue-template-compiler": "^2.6.14"
   },

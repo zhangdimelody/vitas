@@ -1,5 +1,8 @@
+// lerna-template.txt
 {
-  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "useWorkspaces": true,
-  "version": "0.0.2"
+  "packages": [
+    "packages/demo"
+  ],
+  "version": "independent",
+  "useWorkspaces": true
 }
