@@ -10,7 +10,7 @@
     "publish": "lerna publish"
   },
   "publishConfig": {
-    "registry": "https://npm.xesv5.com/"
+    "registry": "https://npm.100tal.com/"
   },
   "dependencies": {
     "core-js": "^3.8.3",
