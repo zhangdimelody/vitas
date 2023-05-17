@@ -16,5 +16,8 @@
     "vue": "^2.7.14",
     "vue-template-compiler": "^2.7.14"
   },
-  "gitHead": "4e03563c3dce4df9f0e399b7666385ce6d252f4f"
+  "publishConfig": {
+    "registry": "https://npm.100tal.com/"
+  },
+  "gitHead": "c1b07c413ee5939a55b341cc72f04fc200a985c6"
 }
