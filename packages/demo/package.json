@@ -1,6 +1,6 @@
 {
   "name": "demo",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
@@ -19,5 +19,5 @@
   "publishConfig": {
     "registry": "https://npm.100tal.com/"
   },
-  "gitHead": "c94532e0a15b2a0dc0b60f302548f11b20dfa86e"
+  "gitHead": "823b53539f36578b36b614afdfd56f631fba8b9c"
 }
