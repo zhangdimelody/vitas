@@ -1,6 +1,6 @@
 {
   "name": "demo",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
@@ -17,5 +17,5 @@
     "vue-template-compiler": "^2.7.14"
   },
   "publishConfig": {},
-  "gitHead": "ce037d884520180beaaa90fe991f786a6d76804f"
+  "gitHead": "46609b0b2d2b7f1678551c355954e576e5eb57bc"
 }
