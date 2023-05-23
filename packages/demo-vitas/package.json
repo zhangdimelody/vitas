@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "demo-vitas",
   "version": "0.0.58",
   "description": "",
   "type": "module",
@@ -16,5 +16,5 @@
     "vue": "^2.7.14",
     "vue-template-compiler": "^2.7.14"
   },
-  "gitHead": "aa1e88dfc8aa1f0fae08d1f17efd50a1471650c5"
+  "gitHead": "f20c03fa49ef8a3d2508690dc50429ffae6322d7"
 }
