@@ -1,6 +1,6 @@
 {
   "name": "@thinkacademy/demo-vitas",
-  "version": "0.0.59",
+  "version": "0.0.60",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
