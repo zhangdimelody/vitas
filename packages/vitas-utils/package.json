@@ -1,0 +1,16 @@
+{
+  "name": "@thinkacademy/vitas-utils",
+  "version": "1.0.0",
+  "description": "vitas-utils",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "author": "zhangdi56",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^3.23.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}

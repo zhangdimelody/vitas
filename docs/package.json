@@ -1,0 +1,12 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "vitas 文档说明",
+  "main": "index.js",
+  "scripts": {},
+  "author": "zhangdi56",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.9.9"
+  }
+}

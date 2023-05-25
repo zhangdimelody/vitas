@@ -7,7 +7,11 @@
   "private": true,
   "scripts": {
     "publish:independent": "node scripts/publish.js",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "serve": "vue-cli-service serve",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "bash doc-deploy.sh"
   },
   "publishConfig": {
     "registry": "https://npm.100tal.com/"
@@ -26,7 +30,9 @@
     "eslint-plugin-vue": "^8.0.3",
     "execa": "^5.1.1",
     "lerna": "^6.6.1",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "vuepress": "^1.9.9",
+    "webpack": "^4.46.0"
   },
   "eslintConfig": {
     "root": true,
