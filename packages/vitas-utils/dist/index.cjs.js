@@ -1,4 +1,6 @@
-import 'core-js/modules/es6.regexp.replace.js';
+'use strict';
+
+require('core-js/modules/es6.regexp.replace.js');
 
 function encryptPhone(phone) {
   return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
@@ -46,4 +48,5 @@ var drag = {
   }
 };
 
-export { drag, encryptPhone };
+exports.drag = drag;
+exports.encryptPhone = encryptPhone;

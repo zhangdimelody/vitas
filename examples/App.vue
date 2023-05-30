@@ -13,7 +13,7 @@ import Demo from '../packages/demo-vitas/dist';
 // import encryptPhone from '../packages/vitas-utils/encryptPhone.js';
 // import drag from '../packages/vitas-utils/drag.js';
 
-import { encryptPhone, drag } from '../packages/vitas-utils/dist/index.min.js';
+import { encryptPhone, drag } from '../packages/vitas-utils/dist/index.es.js';
 
 export default {
   name: 'App',
