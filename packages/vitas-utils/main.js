@@ -1,4 +1,6 @@
 import encryptPhone from "./encryptPhone";
-export default {
-  encryptPhone
+import drag from "./drag";
+export {
+  encryptPhone,
+  drag
 };
