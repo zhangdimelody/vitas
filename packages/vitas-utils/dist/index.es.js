@@ -1,1 +1,59 @@
-import"core-js/modules/es6.regexp.replace.js";function e(e){return e.replace(/(\d{3})\d{4}(\d{4})/,"$1****$2")}var t=/Android|webOS|iPhone|iPod|BlackBerry|symbianos|windows phone/i.test(navigator.userAgent)?{start:"touchstart",move:"touchmove",end:"touchend"}:{start:"mousedown",move:"mousemove",end:"mouseup"},o={bind:function(e,o){var n=e;n.style.position="absolute",n.addEventListener(t.start,(function(e){var s=e.touches?e.touches[0]:e,r=s.clientX-n.offsetLeft,u=s.clientY-n.offsetTop,i=function(e){e.preventDefault()},d=function(e){var t=e.touches?e.touches[0]:e,o=t.clientX-r,s=t.clientY-u;n.style.left=o+"px",n.style.top=s+"px",window.addEventListener("touchmove",i,{passive:!1})};document.addEventListener(t.move,d),document.addEventListener(t.end,(function e(){document.removeEventListener(t.move,d),document.removeEventListener(t.end,e),document.removeEventListener("touchmove",i),o.value&&(o.value.left=n.style.left,o.value.top=n.style.top)}))}),!1)}};export{o as drag,e as encryptPhone};
+import 'core-js/modules/es6.regexp.replace.js';
+
+function encryptPhone(phone) {
+  return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+}
+
+var isMobile = function isMobile() {
+  return /Android|webOS|iPhone|iPod|BlackBerry|symbianos|windows phone/i.test(navigator.userAgent);
+};
+var mobileFuncName = {
+  start: 'touchstart',
+  move: 'touchmove',
+  end: 'touchend'
+};
+var pcFuncName = {
+  start: 'mousedown',
+  move: 'mousemove',
+  end: 'mouseup'
+};
+var funcName = isMobile() ? mobileFuncName : pcFuncName;
+var drag = {
+  bind: function bind(el, params) {
+    var dragBox = el;
+    dragBox.style.position = 'fixed';
+    dragBox.addEventListener(funcName.start, function (e) {
+      //鼠标相对元素的位置
+      var cur = e.touches ? e.touches[0] : e;
+      var disX = cur.clientX - dragBox.offsetLeft;
+      var disY = cur.clientY - dragBox.offsetTop;
+      var preventFunc = function preventFunc(e) {
+        e.preventDefault();
+      };
+      var moveFunc = function moveFunc(e) {
+        var cur = e.touches ? e.touches[0] : e;
+        var left = cur.clientX - disX;
+        var top = cur.clientY - disY;
+        dragBox.style.left = left + 'px';
+        dragBox.style.top = top + 'px';
+        window.addEventListener(funcName.move, preventFunc, {
+          passive: false
+        });
+      };
+      var endFunc = function endFunc() {
+        document.removeEventListener(funcName.move, moveFunc);
+        document.removeEventListener(funcName.end, endFunc); // 预防鼠标弹起来后还会循环（即预防鼠标放上去的时候还会移动）
+        document.removeEventListener(funcName.move, preventFunc);
+        // 如果传参数了就对外暴露元素相对于父级位置
+        if (params.value) {
+          params.value.left = dragBox.style.left;
+          params.value.top = dragBox.style.top;
+        }
+      };
+      document.addEventListener(funcName.move, moveFunc);
+      document.addEventListener(funcName.end, endFunc);
+    }, false);
+  }
+};
+
+export { drag, encryptPhone };

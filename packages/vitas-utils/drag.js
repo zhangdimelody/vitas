@@ -16,7 +16,7 @@ const funcName = isMobile() ? mobileFuncName : pcFuncName;
 export default {
   bind: function (el, params) {
     let dragBox = el;
-    dragBox.style.position = 'absolute';
+    dragBox.style.position = 'fixed';
     dragBox.addEventListener(funcName.start, e => {
       //鼠标相对元素的位置
       let cur = e.touches ? e.touches[0] : e;
@@ -30,12 +30,12 @@ export default {
         let top = cur.clientY - disY;
         dragBox.style.left = left + 'px';
         dragBox.style.top = top + 'px';
-        window.addEventListener('touchmove', preventFunc, { passive: false })
+        window.addEventListener(funcName.move, preventFunc, { passive: false })
       }
       const endFunc = () => {
         document.removeEventListener(funcName.move, moveFunc)
         document.removeEventListener(funcName.end, endFunc) // 预防鼠标弹起来后还会循环（即预防鼠标放上去的时候还会移动）
-        document.removeEventListener('touchmove', preventFunc)
+        document.removeEventListener(funcName.move, preventFunc)
         // 如果传参数了就对外暴露元素相对于父级位置
         if(params.value) {
           params.value.left = dragBox.style.left;
