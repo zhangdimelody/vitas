@@ -7,13 +7,13 @@ module.exports = {
       // 一级导航
       { text: '指南', link: '/guide/' },
       // 下拉列表导航
-      {
-        text: '了解更多',
-        items: [
-          { text: 'github', link: 'https://github.com/ShuQingX/vue-comp-test', target: '_blank' },
-          { text: 'preview', link: 'https://shuqingx.github.io/vue-comp-test/', target: '_blank' }
-        ]
-      }
+      // {
+      //   text: '了解更多',
+      //   items: [
+      //     { text: 'github', link: 'https://github.com/ShuQingX/vue-comp-test', target: '_blank' },
+      //     { text: 'preview', link: 'https://shuqingx.github.io/vue-comp-test/', target: '_blank' }
+      //   ]
+      // }
     ],
     sidebar: {
       '/guide/': [
@@ -22,8 +22,17 @@ module.exports = {
           title: '组件',
           collapsable: false,
           children: [
-            ['../guide/Button.md', 'Button'],
-            ['../guide/Card.md', 'Card']
+            ['../guide/components/Share.md', '分享组件'],
+            ['../guide/components/Retention.md', '留资组件'],
+          ]
+        },
+        {
+          title: '工具包',
+          collapsable: false,
+          children: [
+            ['../guide/utils/drag.md', 'drag'],
+            ['../guide/utils/encryptPhone.md', 'encryptPhone'],
+            ['../guide/utils/gRecaptcha.md', 'gRecaptcha']
           ]
         }
       ]
