@@ -19,20 +19,20 @@ module.exports = {
       '/guide/': [
         ['', '介绍'], // '' 等价于 /guide/
         {
-          title: '组件',
-          collapsable: false,
-          children: [
-            ['../guide/components/Share.md', '分享组件'],
-            ['../guide/components/Retention.md', '留资组件'],
-          ]
-        },
-        {
           title: '工具包',
           collapsable: false,
           children: [
             ['../guide/utils/drag.md', 'drag'],
             ['../guide/utils/encryptPhone.md', 'encryptPhone'],
             ['../guide/utils/gRecaptcha.md', 'gRecaptcha']
+          ]
+        },
+        {
+          title: '组件',
+          collapsable: false,
+          children: [
+            ['../guide/components/Retention.md', '留资组件'],
+            ['../guide/components/Share.md', '分享组件'],
           ]
         }
       ]
