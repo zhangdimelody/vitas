@@ -20,7 +20,5 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^7.0.2"
   },
-  "dependencies": {
-    "rollup-pluginutils": "^2.8.2"
-  }
+  "dependencies": {}
 }
