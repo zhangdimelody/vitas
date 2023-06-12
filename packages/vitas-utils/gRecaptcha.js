@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
+let key = ''
 const { verifyKey } = process.env
-const verifyUrl = `https://www.recaptcha.net/recaptcha/enterprise.js?render=${verifyKey}`
 
 const loadData = (result, loadingTime, context, successCount) => {
   console.log(result, loadingTime, context, successCount, 'loadData');
@@ -21,7 +21,10 @@ const getTokenStatus = (result, loadingTime, context, status) => {
 
 let successCount = 0;
 
-function createScript() {
+function createScript(initKey = '') {
+  
+  key = initKey
+  const verifyUrl = `https://www.recaptcha.net/recaptcha/enterprise.js?render=${key || verifyKey}`
   let loadResult = ''
   const startTime = new Date().getTime();
   successCount += 1
@@ -55,7 +58,7 @@ function getToken() {
   return new Promise((resolve, reject) => {
     grecaptcha.enterprise.ready(async () => {
       try {
-        const token = await grecaptcha.enterprise.execute(verifyKey, { action: 'leads' })
+        const token = await grecaptcha.enterprise.execute(key || verifyKey, { action: 'leads' })
         if (token !== '') {
           const result = 'success'
           const endTime = new Date().getTime()
