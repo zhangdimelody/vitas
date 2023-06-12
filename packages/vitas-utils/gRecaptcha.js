@@ -1,28 +1,30 @@
 /* eslint-disable no-undef */
-let key = ''
 const { verifyKey } = process.env
 
 const loadData = (result, loadingTime, context, successCount) => {
   console.log(result, loadingTime, context, successCount, 'loadData');
-  context.Sensors.track('recaptcha_js_load', {
-    is_successed: result === 'success' ? 1 : 0,
-    loading_time: loadingTime,
-    success_count: successCount,
-  })
+  if (context.Sensors) {
+    context.Sensors.track('recaptcha_js_load', {
+      is_successed: result === 'success' ? 1 : 0,
+      loading_time: loadingTime,
+      success_count: successCount,
+    })
+  }
 }
 const getTokenStatus = (result, loadingTime, context, status) => {
   console.log(result, loadingTime, 'loadStatus')
-  context.Sensors.track('recaptcha_interface_call', {
-    is_successed: result === 'success' ? 1 : 0,
-    loading_time: loadingTime,
-    is_grecaptcha_defined: status || true,
-  })
+  if (context.Sensors) {
+    context.Sensors.track('recaptcha_interface_call', {
+      is_successed: result === 'success' ? 1 : 0,
+      loading_time: loadingTime,
+      is_grecaptcha_defined: status || true,
+    })
+  }
 }
 
 let successCount = 0;
 
-function createScript(initKey = '') {
-  key = initKey
+function createScript(key = '') {
   const verifyUrl = `https://www.recaptcha.net/recaptcha/enterprise.js?render=${key || verifyKey}`
   let loadResult = ''
   const startTime = new Date().getTime();
@@ -51,7 +53,7 @@ function createScript(initKey = '') {
   document.getElementsByTagName('head')[0].appendChild(script)
 }
 
-function getToken() {
+function getToken(key = '') {
   const startTime = new Date().getTime()
   if (!grecaptcha) { getTokenStatus('error', 0, this, false) }
   return new Promise((resolve, reject) => {
