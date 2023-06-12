@@ -22,7 +22,6 @@ const getTokenStatus = (result, loadingTime, context, status) => {
 let successCount = 0;
 
 function createScript(initKey = '') {
-  
   key = initKey
   const verifyUrl = `https://www.recaptcha.net/recaptcha/enterprise.js?render=${key || verifyKey}`
   let loadResult = ''
@@ -75,4 +74,4 @@ function getToken() {
   })
 }
 
-export { createScript, getToken }
+export default { createScript, getToken }
